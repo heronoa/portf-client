@@ -1,19 +1,8 @@
-import {
-  IFilterOptions,
-  IRestrictedDataType,
-  IUserDataType,
-  OmittedTS,
-} from "@/@types";
-import EditButton from "@/components/Auth/EditButton";
+import { IFilterOptions, IRestrictedDataType, IUserDataType } from "@/@types";
 import FilterOptionsPanel from "@/components/UI/FilterOptionsPanel";
-import TinyItem from "@/components/UI/Items/TinyItem";
 import RenderItems from "@/components/UI/RenderItems";
 import { useUsers } from "@/context/UsersContext";
-import { formErrorsHandler } from "@/services/errorHandler";
-import { translateItemKeys, formatItem } from "@/services/format";
 import { useEffect, useState } from "react";
-import { GiConfirmed } from "react-icons/gi";
-import { ImCancelCircle } from "react-icons/im";
 
 interface Props {
   user: IUserDataType;
@@ -24,13 +13,6 @@ const ColaboratorRestrictedFrame = ({ user }: Props) => {
   const [data, setData] = useState<IRestrictedDataType>();
   const [error, setError] = useState<string | null>();
   const [filterOptions, setFilterOptions] = useState<IFilterOptions>({
-    fee: "",
-    initial_date: "",
-    initial_value: "",
-    late_fee: { ASC: null },
-    payed: "",
-    payment_method: "",
-    value: "",
     // adress: { ASC: null },
   });
 
@@ -46,7 +28,7 @@ const ColaboratorRestrictedFrame = ({ user }: Props) => {
 
   return (
     <div className="frame-container !px-0">
-      <div>
+      {/* <div>
         <h4>Débitos</h4>
       </div>
       <div className="w-full flex flex-col justify-center mt-12">
@@ -68,7 +50,7 @@ const ColaboratorRestrictedFrame = ({ user }: Props) => {
             />
           )}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

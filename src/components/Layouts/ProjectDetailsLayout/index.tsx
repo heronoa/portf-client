@@ -31,10 +31,7 @@ const ProjectDetailsLayout = ({ project }: Props) => {
           >
             Voltar
           </button>
-          <button
-            className="btn !text-white"
-            onClick={() => location.reload()}
-          >
+          <button className="btn !text-white" onClick={() => location.reload()}>
             Tentar Novamente
           </button>
         </div>
@@ -44,7 +41,7 @@ const ProjectDetailsLayout = ({ project }: Props) => {
   return (
     <section className="flex relative justify-start gap-4 items-center flex-col px-12 shadow-lg min-h-[75vh] dark:text-white">
       <Transition.Root show={mounted} className={"w-full"}>
-        <BackButton path={`/costumers/${project.costumer_id}`} />
+        {/* <BackButton path={`/costumers/${project.project_id}`} /> */}
         <FadeIn delay="delay-[300ms]">
           <ProjectDetailsHeaderFrame project={project} />
         </FadeIn>

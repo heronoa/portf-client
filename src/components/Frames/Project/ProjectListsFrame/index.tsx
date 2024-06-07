@@ -27,7 +27,7 @@ const ProjectListsFrame = ({ project }: Props) => {
 
   return (
     <div className="frame-container">
-      {project?.doc && (
+      {/* {project?.doc && (
         <DocumentDisplay doc={project.doc as unknown as string} />
       )}
       <div className="flex flex-col md:flex-row w-full justify-end mt-4 border-t-gray-300 border-t pt-4 gap-4">
@@ -35,7 +35,7 @@ const ProjectListsFrame = ({ project }: Props) => {
           Renegociamento
         </button>
         <DeleteButton fn={onDeleteProject} />
-      </div>
+      </div> */}
     </div>
   );
 };

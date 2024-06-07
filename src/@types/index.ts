@@ -136,7 +136,8 @@ export type OmittedTS =
   | "uid"
   | "createdAt"
   | "updatedAt"
-  | "doc"
+  | "thumb"
+  | "images"
   | "rgDoc"
   | "cpfDoc"
   | "otherDoc";

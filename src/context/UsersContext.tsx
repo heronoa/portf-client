@@ -217,35 +217,35 @@ export const UsersProvider = ({ children }: IUsersProvider) => {
     debt: Partial<IProjectDataType>,
   ) => {
     setError(null);
-    const newDebt = {
-      costumer_id: costumer_id,
-      value: debt.value,
-      initial_value: debt.initial_value,
-      payment_method: debt.payment_method,
-      fee: debt.fee,
-      initial_date: debt.initial_date,
-      due_dates: debt.due_dates,
-      payed: debt.payed,
-      late_fee: debt.late_fee,
-      callings: debt.callings,
-      description: debt.description,
-    };
+    // const newDebt = {
+    //   costumer_id: costumer_id,
+    //   value: debt.value,
+    //   initial_value: debt.initial_value,
+    //   payment_method: debt.payment_method,
+    //   fee: debt.fee,
+    //   initial_date: debt.initial_date,
+    //   due_dates: debt.due_dates,
+    //   payed: debt.payed,
+    //   late_fee: debt.late_fee,
+    //   callings: debt.callings,
+    //   description: debt.description,
+    // };
 
-    const doc = debt?.doc?.[0];
+    // const doc = debt?.doc?.[0];
 
-    const fd = new FormData();
-    fd.append("file", doc as File);
+    // const fd = new FormData();
+    // fd.append("file", doc as File);
 
-    fd.append("data", JSON.stringify(newDebt));
+    // fd.append("data", JSON.stringify(newDebt));
 
     try {
       const authToken = getAuthToken();
-      const res = await axios.postForm(`${ENVS.apiUrl}/debts/add`, fd, {
-        headers: {
-          Authorization: "Bearer " + authToken,
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      // const res = await axios.postForm(`${ENVS.apiUrl}/debts/add`, fd, {
+      //   headers: {
+      //     Authorization: "Bearer " + authToken,
+      //     "Content-Type": "multipart/form-data",
+      //   },
+      // });
       // const resUpload = await axios.postForm(`${ENVS.apiUrl}/debts/post`, fd, {
       //   headers: {
       //     Authorization: "Bearer " + authToken,

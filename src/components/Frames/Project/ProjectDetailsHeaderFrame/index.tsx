@@ -52,23 +52,23 @@ const ProjectDetailsHeaderFrame = ({ project }: Props) => {
     return "text";
   };
 
-  const submitEdittable = async (key: keyof IProjectDataType) => {
-    const obj: any = { debt_id: project.debt_id };
-    obj[key] = edittables[key];
+  // const submitEdittable = async (key: keyof IProjectDataType) => {
+  //   const obj: any = { debt_id: project.debt_id };
+  //   obj[key] = edittables[key];
 
-    if (key === "initial_value") {
-      obj.value = Number(obj[key]) * (1 + Number(project.fee) / 100);
-    }
+  //   if (key === "initial_value") {
+  //     obj.value = Number(obj[key]) * (1 + Number(project.fee) / 100);
+  //   }
 
-    console.log(edittables);
-    await updateProjects(obj);
-    // handleChangeEdittables(key, undefined);
-  };
+  //   console.log(edittables);
+  //   await updateProjects(obj);
+  //   // handleChangeEdittables(key, undefined);
+  // };
 
   return (
     <div className="frame-container">
       <div className="w-full">
-        <div className="flex justify-start items-center gap-4">
+        {/* <div className="flex justify-start items-center gap-4">
           <SiCashapp className="h-24 w-24" />
           {!edittables?.value && (
             <h3 className="font-bold text-[26px] w-[60%] relative">
@@ -97,9 +97,9 @@ const ProjectDetailsHeaderFrame = ({ project }: Props) => {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
 
-        <div>
+        {/* <div>
           {!edittables?.description && (
             <p className="relative ">
               {project?.description}
@@ -135,8 +135,8 @@ const ProjectDetailsHeaderFrame = ({ project }: Props) => {
               </div>
             </div>
           )}
-        </div>
-        <div className="grid md:grid-cols-2 grid-cols-1 justify-evenly gap-4  border-t-gray-300 border-t mt-4">
+        </div> */}
+        {/* <div className="grid md:grid-cols-2 grid-cols-1 justify-evenly gap-4  border-t-gray-300 border-t mt-4">
           {Object.entries({
             initial_date: project.initial_date,
             due_dates: project?.due_dates,
@@ -174,7 +174,6 @@ const ProjectDetailsHeaderFrame = ({ project }: Props) => {
                         {formatItem(String(objValue), objKey as any)}
                       </span>
                     )}
-                    {/* {formatItem(objValue, objKey as any)} */}
                     {![
                       "due_dates",
                       "initial_value",
@@ -244,9 +243,9 @@ const ProjectDetailsHeaderFrame = ({ project }: Props) => {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>
-      <div>
+      {/* <div>
         {Number(activeUser?.permission) > 2 && (
           <div className="mt-8 flex gap-2 relative">
             <button
@@ -265,7 +264,7 @@ const ProjectDetailsHeaderFrame = ({ project }: Props) => {
             </button>
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -21,7 +21,7 @@ const ProjectDetails = () => {
 
   useEffect(() => {
     console.log({ allProjects });
-    setSelectedProject(allProjects?.find(e => e.debt_id === slug));
+    // setSelectedProject(allProjects?.find(e => e.debt_id === slug));
   }, [allProjects, slug]);
 
   return (
