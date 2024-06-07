@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: white
+}
+
+.dark,
+[data-theme="dark"],
+[color-schema="dark"],
+.dark>* {
+  :root {
+    --bg-primary: black
+  }
+}
+
+body {
+  color: rgb(var(--bg-primary));
+  background: var(--bg-primary);
+}
+
+.btn {
+  @apply min-w-[200px] h-12 text-center md:w-2/3 bg-blue-900 border-2 rounded-md hover:shadow-lg hover:bg-blue-800 text-lg transition
+}
+
+.loading-circle {
+  border: 10px solid transparent;
+  border-top: 10px solid rgb(30 58 138);
+  animation: spin 1s linear infinite;
+
+  @apply aspect-square h-[150px] rounded-full flex items-center justify-center m-auto
+}
+
+.loading-circle::after {
+  content: "";
+  border: 2px solid rgb(30 58 138);
+  border-top: 2px solid transparent;
+  animation: spin 3s linear infinite;
+
+  @apply aspect-square h-[100px] rounded-full flex items-center justify-center relative
+}
+
+#main-header {
+  @apply dark:bg-[#333333] dark:text-white
+}
+
+#main-side-menu {
+  @apply dark:bg-[#333333] dark:text-white
+}
+
+.dark {
+  @apply bg-[#141414]
+}
+
+.underline-animation-event {
+  @apply relative !flex items-center
+}
+
+.underline-animation-event::after {
+  /* content: ""; */
+  transition: 0.3s ease-out;
+
+  @apply absolute bottom-0 left-0 w-0 !h-[3px] content-[""] bg-blue-900;
+}
+
+.underline-animation-event:hover::after {
+  @apply w-full
+}
+
+.frame-container {
+  @apply mx-auto shadow-lg p-12 rounded-lg flex flex-col justify-center items-center gap-4 w-full md:w-[80%]
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
